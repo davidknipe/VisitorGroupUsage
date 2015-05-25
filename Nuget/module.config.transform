@@ -1,0 +1,5 @@
+<module>
+  <dojoModules>
+    <add name="visitorgroupusage" path="Scripts/visitorgroupusage" />
+  </dojoModules>
+</module>
