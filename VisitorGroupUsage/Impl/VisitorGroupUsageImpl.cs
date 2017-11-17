@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Castle.Core.Internal;
 using EPiServer.Core;
 using EPiServer.Personalization;
@@ -46,10 +45,7 @@ namespace VisitorGroupUsage.Impl
             foreach (var property in currentContent.Property)
             {
                 //Properties that can be personalised such as the PropertyXhtmlString implement IPersonalizedRoles
-                if (property is IPersonalizedRoles)
-                {
-                    (property as IPersonalizedRoles).GetRoles().ForEach(x => addVisitorGroup(visitorGroups, x, depth));
-                }
+                (property as IPersonalizedRoles)?.GetRoles().ForEach(x => AddVisitorGroup(visitorGroups, x, depth));
                 //Check content areas for other content
                 if (property is PropertyContentArea)
                 {
@@ -57,14 +53,11 @@ namespace VisitorGroupUsage.Impl
                     {
                         foreach (var item in (((ContentArea) (property.Value)).Items))
                         {
-                            if (item.AllowedRoles != null)
-                            {
-                                item.AllowedRoles.ForEach(x => addVisitorGroup(visitorGroups, x, depth));
-                            }
+                            item.AllowedRoles?.ForEach(x => AddVisitorGroup(visitorGroups, x, depth));
 
                             var blockData = item.GetContent();
                             var groups = GetVisitorGroupsRecursive(blockData, depth + 1);
-                            groups.ForEach(x => addVisitorGroup(visitorGroups, x.Key, depth + 1));
+                            groups.ForEach(x => AddVisitorGroup(visitorGroups, x.Key, depth + 1));
                         }
                     }
                 }
@@ -79,7 +72,7 @@ namespace VisitorGroupUsage.Impl
         /// <param name="visitorGroups">The IDictionary&lt;string, int&gt; of the visitor groups used</param>
         /// <param name="group">The visitor group Guid to add</param>
         /// <param name="depth">The current depth of the operation</param>
-        private void addVisitorGroup(IDictionary<string, int> visitorGroups, string group, int depth)
+        private void AddVisitorGroup(IDictionary<string, int> visitorGroups, string group, int depth)
         {
             if (!visitorGroups.ContainsKey(group))
             {

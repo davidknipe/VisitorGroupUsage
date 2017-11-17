@@ -4,7 +4,7 @@
     <widgets>
       <visitorgroupusageviewer>
         <title>Visitor group usage</title>
-        <description>Used to view visitor groups used on the current content and on any content that the current links to</description>
+        <description>Used to view visitor groups used on the current published version of content and on any published content that the current links to</description>
         <usedonthiscontent>On this content</usedonthiscontent>
         <usedonreferencedcontent>On content that's referenced</usedonreferencedcontent>
         <novisitorgroupsused>No visitor groups used on this content</novisitorgroupsused>

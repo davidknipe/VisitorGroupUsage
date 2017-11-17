@@ -2,14 +2,18 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>VisitorGroupUsage</id>
-    <title>Visitor Group Usage Gadget</title>
-    <version>1.0.2</version>
+    <title>Visitor Group Usage Viewer</title>
+    <version>10.0.0</version>
     <authors>David Knipe</authors>
     <owners>David Knipe</owners>
     <licenseUrl>https://github.com/davidknipe/VisitorGroupUsage/blob/master/LICENSE</licenseUrl>
-    <projectUrl>http://www.david-tec.com/2015/05/visitor-group-usage-viewer-for-episerver-8/</projectUrl>
+    <projectUrl>http://www.david-tec.com/2017/11/visitor-group-usage-viewer-for-episerver-10/</projectUrl>
+    <iconUrl>https://www.david-tec.com/global/media/visitorgroupusage/visitorgroupusageicon.png?v=10.0.0</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Adds a gadget to the EPiServer UI that can be used to view visitor groups used on the current content and on any content that the current links to</description>
+    <description>Adds Episerver 10 compatibility and packages as separate module</description>
     <tags>EPiServer CMS</tags>
+    <dependencies>
+      <dependency id="EPiServer.CMS.UI" version="[10.0, 11.0)" />
+    </dependencies>
   </metadata>
 </package>

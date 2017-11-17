@@ -11,25 +11,24 @@ using EPiServer.Logging;
 
 namespace VisitorGroupUsage.Controllers
 {
-    //[Authorize(Roles = "WebEditors, WebAdmins, Administrator")]
     public class VisitorGroupUsageController : Controller
     {
-        private static readonly ILogger _logger = LogManager.GetLogger();
+        private static readonly ILogger Logger = LogManager.GetLogger();
 
         public ActionResult Index()
         {
             if (this.Request.QueryString["id"] == null)
             {
-                return PartialView(null);
+                return PartialView("~/modules/_protected/VisitorGroupUsage/Views/Index.cshtml", null);
             }
 
             try
             {
-                return PartialView(GetModel());
+                return PartialView("~/modules/_protected/VisitorGroupUsage/Views/Index.cshtml", GetModel());
             }
             catch (Exception ex)
             {
-                _logger.Error("Exception in VisitorGroupUsageController", ex);
+                Logger.Error("Exception in VisitorGroupUsageController", ex);
                 return PartialView(null);
             }
         }
@@ -50,8 +49,8 @@ namespace VisitorGroupUsage.Controllers
 
             if (this.Request.QueryString["vg"] != null)
             {
-                model.UsedOnThisContent.SelectedVisitorGroup = this.Request.QueryString["vg"].ToString();
-                model.UsedOnReferencedContent.SelectedVisitorGroup = this.Request.QueryString["vg"].ToString();
+                model.UsedOnThisContent.SelectedVisitorGroup = this.Request.QueryString["vg"];
+                model.UsedOnReferencedContent.SelectedVisitorGroup = this.Request.QueryString["vg"];
             }
 
             foreach (var group in visitorGroupUsage.GetVisitorGroupsForContent(content).OrderBy(x => x.Value))

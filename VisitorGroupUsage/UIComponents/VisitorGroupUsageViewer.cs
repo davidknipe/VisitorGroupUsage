@@ -5,10 +5,9 @@ namespace VisitorGroupUsage.UIComponents
 {
     [Component(PlugInAreas = PlugInArea.Assets,
            Categories = "cms",
-           WidgetType = "visitorgroupusage.viewer",
-           LanguagePath = "/widgets/visitorgroupusageviewer"
+           WidgetType = "visitorgroupusage/viewer",
+           LanguagePath = "/widgets/visitorgroupusageviewer", 
+           SortOrder = int.MaxValue
            )]
-    public class VisitorGroupUsageViewer
-    {
-    }
+    public class VisitorGroupUsageViewer { }
 }
