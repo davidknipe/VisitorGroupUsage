@@ -1,4 +1,4 @@
-# Visitor Group usage viewer for Episervers
+# Visitor Group usage viewer for Episerver
 
 Visitor Group usage gadget for Episerver 10
 
