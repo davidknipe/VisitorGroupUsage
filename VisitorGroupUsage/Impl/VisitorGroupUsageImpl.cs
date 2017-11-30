@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Castle.Core.Internal;
 using EPiServer.Core;
 using EPiServer.Personalization;
 using EPiServer.ServiceLocation;
@@ -46,6 +45,7 @@ namespace VisitorGroupUsage.Impl
             {
                 //Properties that can be personalised such as the PropertyXhtmlString implement IPersonalizedRoles
                 (property as IPersonalizedRoles)?.GetRoles().ForEach(x => AddVisitorGroup(visitorGroups, x, depth));
+
                 //Check content areas for other content
                 if (property is PropertyContentArea)
                 {

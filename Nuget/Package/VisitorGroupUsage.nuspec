@@ -3,17 +3,17 @@
   <metadata>
     <id>VisitorGroupUsage</id>
     <title>Visitor Group Usage Viewer</title>
-    <version>10.0.0</version>
+    <version>11.0.0</version>
     <authors>David Knipe</authors>
     <owners>David Knipe</owners>
     <licenseUrl>https://github.com/davidknipe/VisitorGroupUsage/blob/master/LICENSE</licenseUrl>
-    <projectUrl>http://www.david-tec.com/2017/11/visitor-group-usage-viewer-for-episerver-10/</projectUrl>
-    <iconUrl>https://www.david-tec.com/global/media/visitorgroupusage/visitorgroupusageicon.png?v=10.0.0</iconUrl>
+    <projectUrl>http://www.david-tec.com/2017/12/visitor-group-usage-viewer-for-episerver-11/</projectUrl>
+    <iconUrl>https://www.david-tec.com/global/media/visitorgroupusage/visitorgroupusageicon.png?v=11.0.0</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Adds Episerver 10 compatibility and packages as separate module</description>
+    <description>Adds Episerver 11 compatibility</description>
     <tags>EPiServer CMS</tags>
     <dependencies>
-      <dependency id="EPiServer.CMS.UI" version="[10.0, 11.0)" />
+      <dependency id="EPiServer.CMS.UI.Core" version="[11.0, 12.0)" />
     </dependencies>
   </metadata>
 </package>
