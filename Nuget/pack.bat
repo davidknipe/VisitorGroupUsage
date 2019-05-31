@@ -38,8 +38,10 @@ copy ..\VisitorGroupUsage\modules\_protected\VisitorGroupUsage\Views\Index.cshtm
 copy ..\VisitorGroupUsage\modules\_protected\VisitorGroupUsage\Views\VisitorGroupListing.cshtml Package\content\modules\_protected\VisitorGroupUsage\Views\VisitorGroupListing.cshtml
 copy ..\VisitorGroupUsage\lang\VisitorGroupUsageViewer.xml Package\content\lang\VisitorGroupUsageViewer.xml
 
+copy web.config.transform Package\content
+
 @Echo Packing files
 "..\.nuget\nuget.exe" pack package\VisitorGroupUsage.nuspec
 
 @Echo Moving package
-move /Y *.nupkg c:\project\nuget.local\
+move /Y *.nupkg c:\dev\nuget.local\
