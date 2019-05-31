@@ -44,4 +44,4 @@ copy web.config.transform Package\content
 "..\.nuget\nuget.exe" pack package\VisitorGroupUsage.nuspec
 
 @Echo Moving package
-move /Y *.nupkg c:\dev\nuget.local\
+move /Y *.nupkg c:\project\nuget.local\
